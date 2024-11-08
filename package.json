@@ -1,0 +1,56 @@
+{
+  "name": "quicksql1111111",
+  "version": "1.0.0",
+  "description": "QuickSQL is a fast, lightweight database solution for Node.js, optimized for quick data retrieval and manipulation. Designed to handle complex data types including objects and arrays, QuickSQL offers efficient, in-memory caching, supports a variety of SQL operations, and provides built-in tools for seamless data management.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "tsc --build",
+    "prod": "npm run build && node dist/index.js"
+  },
+  "keywords": [
+    "database",
+    "QuickSQL",
+    "sql-database",
+    "lightweight-database",
+    "in-memory-sql",
+    "high-speed-database",
+    "data-storage",
+    "sql-operations",
+    "key-value-database",
+    "javascript-database",
+    "sql-cache",
+    "data-retrieval",
+    "nodejs-database",
+    "data-manipulation",
+    "sql-query",
+    "multi-type-support",
+    "quick-access",
+    "performance",
+    "object-storage"
+  ],
+  "author": "devdestroyer",
+  "license": "ISC",
+  "dependencies": {
+    "better-sqlite3": "^8.7.0",
+    "quicksql111111": "^1.0.0",
+    "quicksql1111111": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.11",
+    "typescript": "^4.9.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DevTerminator69/QuickSQL.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DevTerminator69/QuickSQL/issues"
+  },
+  "homepage": "https://github.com/DevTerminator69/QuickSQL#readme",
+  "files": [
+    "src/**/*",
+    "package.json"
+  ]
+}
