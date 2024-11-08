@@ -221,12 +221,3 @@ try {
 
 ---
 
-### Summary of Changes:
-- **Key-Value Store**: Emphasized that `QuickSQL` is a key-value database using SQL for operations.
-- **Ping Command**: Benchmarks read, write, and delete durations for both in-memory and persistent databases.
-- **Memory-First Mode**: Uses memory as the primary database, syncing changes to persistent storage.
-- **Filepath Mode**: Enables persistent storage via an SQLite file.
-- **Error Handling**: Handles invalid key types, non-numeric operations, and divide-by-zero errors.
-- **Basic Commands**: Supports `set`, `get`, `delete`, and arithmetic commands like `add`, `sub`, `mul`, `div`.
-
-This README now highlights `QuickSQL` as a key-value database while maintaining its SQL-like capabilities, along with all the features you’ve requested!
