@@ -18,13 +18,13 @@
 Install `QuickSQL` using npm:
 
 ```bash
-npm install QuickSQL
+npm install quicksql.db
 ```
 
 ## Getting Started
 
 ```javascript
-const { QuickSQL } = require('QuickSQL');
+const { QuickSQL } = require('quicksql.db');
 
 const db = new QuickSQL({
   filepath: './myDatabase.db',     // Path to the SQLite database file
