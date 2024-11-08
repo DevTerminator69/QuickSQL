@@ -1,14 +1,10 @@
-Sure! Here's the updated README with the added explanation that `Destroyer` is a key-value database created using SQL:
+# QuickSQL
 
----
-
-# Destroyer
-
-`Destroyer` is a versatile, hybrid in-memory and persistent key-value database for Node.js, designed to offer fast data access and optional database syncing. Built using SQL with `better-sqlite3`, `Destroyer` combines the simplicity of a key-value store with the power of SQL-like operations, making it flexible and efficient for various use cases. It supports in-memory caching, JSON serialization for complex data structures, and automatic syncing to persistent storage.
+`QuickSQL` is a versatile, hybrid in-memory and persistent key-value database for Node.js, designed to offer fast data access and optional database syncing. Built using SQL with `better-sqlite3`, `QuickSQL` combines the simplicity of a key-value store with the power of SQL-like operations, making it flexible and efficient for various use cases. It supports in-memory caching, JSON serialization for complex data structures, and automatic syncing to persistent storage.
 
 ## Features
 
-- **Key-Value Database**: At its core, `Destroyer` is a key-value database, where each key is mapped to a specific value, which can be a string, number, object, or array.
+- **Key-Value Database**: At its core, `QuickSQL` is a key-value database, where each key is mapped to a specific value, which can be a string, number, object, or array.
 - **Hybrid Storage**: Leverage in-memory caching for rapid access while keeping a persistent database as a backup.
 - **Memory-First Operation**: Optionally use memory as the primary data store with real-time syncing to the persistent database.
 - **Basic SQL-Like Operations**: Commands for `set`, `get`, `delete`, and arithmetic (`add`, `sub`, `mul`, `div`).
@@ -19,18 +15,18 @@ Sure! Here's the updated README with the added explanation that `Destroyer` is a
 
 ## Installation
 
-Install `Destroyer` using npm:
+Install `QuickSQL` using npm:
 
 ```bash
-npm install Destroyer
+npm install QuickSQL
 ```
 
 ## Getting Started
 
 ```javascript
-const { Destroyer } = require('Destroyer');
+const { QuickSQL } = require('QuickSQL');
 
-const db = new Destroyer({
+const db = new QuickSQL({
   filepath: './myDatabase.db',     // Path to the SQLite database file
   holdDataInMemory: true           // Enables memory as primary storage
 });
@@ -38,7 +34,7 @@ const db = new Destroyer({
 
 ### Memory-First Mode
 
-With `holdDataInMemory` set to `true`, `Destroyer` loads all data into memory on startup and uses the memory cache as the primary data source. Every change to the data is immediately reflected in memory, and optionally, synced back to the persistent database to ensure long-term data storage.
+With `holdDataInMemory` set to `true`, `QuickSQL` loads all data into memory on startup and uses the memory cache as the primary data source. Every change to the data is immediately reflected in memory, and optionally, synced back to the persistent database to ensure long-term data storage.
 
 - **On Startup**: Loads all data from the persistent database into memory.
 - **In Operation**: Memory cache acts as the primary database for fast data retrieval and manipulation.
@@ -46,14 +42,14 @@ With `holdDataInMemory` set to `true`, `Destroyer` loads all data into memory on
 
 ## Filepath Mode
 
-`Destroyer` allows you to configure the database to use a persistent SQLite file for long-term data storage. This mode is ideal when you want to store data permanently on disk, while still taking advantage of the fast in-memory cache for quick access.
+`QuickSQL` allows you to configure the database to use a persistent SQLite file for long-term data storage. This mode is ideal when you want to store data permanently on disk, while still taking advantage of the fast in-memory cache for quick access.
 
 ### Enabling Filepath Mode
 
-To enable **filepath mode**, specify the `filepath` option when initializing the `Destroyer` database. This file will store your data persistently, while the database can still leverage memory for fast access and manipulation.
+To enable **filepath mode**, specify the `filepath` option when initializing the `QuickSQL` database. This file will store your data persistently, while the database can still leverage memory for fast access and manipulation.
 
 ```javascript
-const db = new Destroyer({
+const db = new QuickSQL({
   filepath: './myDatabase.db',  // Path to SQLite file
   holdDataInMemory: false       // Disables memory-first mode, using persistent database
 });
@@ -74,7 +70,7 @@ In **filepath mode**, the persistent SQLite file is used as the primary storage 
 
 ```javascript
 // Initialize with a filepath and memory disabled
-const db = new Destroyer({
+const db = new QuickSQL({
   filepath: './myDatabase.db',
   holdDataInMemory: false
 });
@@ -168,7 +164,7 @@ console.log(db.get("counter")); // Output: 8
 
 ## Synchronizing Memory and Persistent Storage
 
-When `holdDataInMemory` is enabled, `Destroyer` stores data in memory and syncs changes to the persistent database to ensure data consistency.
+When `holdDataInMemory` is enabled, `QuickSQL` stores data in memory and syncs changes to the persistent database to ensure data consistency.
 
 1. **On Startup**: All existing data from the database is loaded into memory.
 2. **In Operation**: Memory serves as the primary data source, providing fast data access.
@@ -199,7 +195,7 @@ Delete Duration: 0.678 ms
 
 ## Error Handling
 
-`Destroyer` includes error handling for invalid operations and input validation:
+`QuickSQL` includes error handling for invalid operations and input validation:
 
 - **Invalid Key Type**: Only string keys are allowed.
 - **Non-Numeric Operations**: Performing arithmetic on non-numeric values will throw an error.
@@ -221,16 +217,16 @@ try {
 
 ## License
 
-`Destroyer` is licensed under the MIT License.
+`QuickSQL` is licensed under the MIT License.
 
 ---
 
 ### Summary of Changes:
-- **Key-Value Store**: Emphasized that `Destroyer` is a key-value database using SQL for operations.
+- **Key-Value Store**: Emphasized that `QuickSQL` is a key-value database using SQL for operations.
 - **Ping Command**: Benchmarks read, write, and delete durations for both in-memory and persistent databases.
 - **Memory-First Mode**: Uses memory as the primary database, syncing changes to persistent storage.
 - **Filepath Mode**: Enables persistent storage via an SQLite file.
 - **Error Handling**: Handles invalid key types, non-numeric operations, and divide-by-zero errors.
 - **Basic Commands**: Supports `set`, `get`, `delete`, and arithmetic commands like `add`, `sub`, `mul`, `div`.
 
-This README now highlights `Destroyer` as a key-value database while maintaining its SQL-like capabilities, along with all the features you’ve requested!
+This README now highlights `QuickSQL` as a key-value database while maintaining its SQL-like capabilities, along with all the features you’ve requested!
