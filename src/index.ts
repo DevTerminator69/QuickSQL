@@ -19,7 +19,7 @@ class QuickSQL {
   private memoryDb: any | null;
 
   constructor(options: QuickSQLOptions = {}) {
-    const { filepath = 'Data.db', holdDataInMemory = true } = options;
+    const { filepath = 'Database.db', holdDataInMemory = true } = options;
     this.persistentDb = new Database(filepath);
     this.persistentDb.pragma('journal_mode = WAL');
     this.memoryDb = holdDataInMemory ? new Database(':memory:') : null;
